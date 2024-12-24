@@ -1,5 +1,7 @@
 import os
 import platform
+import shutil
+from datetime import datetime
 from pathlib import Path
 
 
@@ -28,10 +30,24 @@ def get_storage_path() -> Path:
         raise RuntimeError(f"Failed to determine storage path: {e}")
 
 
+def create_timestamp_backup(storage_path: Path):
+    """Create a timestamped backup of the storage file."""
+    try:
+        backup_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        backup_path = storage_path.parent / f"storage.json.backup_{backup_timestamp}"
+        print(f"Creating backup of storage file at {backup_path}")
+        shutil.copy2(storage_path, backup_path)
+
+    except Exception as e:
+        raise RuntimeError(f"Failed to create backup: {e}")
+
+
 def reset_cursor_id():
     try:
         storage_path = get_storage_path()
         print(f"Storage file location: {storage_path}")
+        create_timestamp_backup(storage_path)
+
     except Exception as e:
         print(f"Error: {e}")
 
