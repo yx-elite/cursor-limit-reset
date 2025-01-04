@@ -71,11 +71,9 @@ The tool generates new unique identifiers for:
 - `telemetry.devDeviceId`
 - `telemetry.sqmId`
 
+## License
 
-## Inspiration
-
-This project is inspired by [yuaotian/go-cursor-help](https://github.com/yuaotian/go-cursor-help)
-
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Important Notice
 
