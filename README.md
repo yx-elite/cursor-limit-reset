@@ -8,12 +8,28 @@ A utility tool designed to manage the Cursor editor's device identification syst
 > - ✅ Cursor v0.44.11 and below
 > - ❌ Latest 0.45.x versions (temporarily unsupported)
 >
-> Please check your Cursor version before using this tool.
+> Before using this tool, please verify your Cursor version. If you're on an unsupported version, download a compatible version below.
 
 ### Download Compatible Version
 > 💾 **Cursor v0.44.11**
-> - [Official Download](https://downloader.cursor.sh/builds/250103fqxdt5u9z/windows/nsis/x64)
-> - [ToDesktop Mirror](https://download.todesktop.com/230313mzl4w4u92/Cursor%20Setup%200.44.11%20-%20Build%20250103fqxdt5u9z-x64.exe)
+> - Windows: [Official](https://downloader.cursor.sh/builds/250103fqxdt5u9z/windows/nsis/x64) | [Mirror](https://download.todesktop.com/230313mzl4w4u92/Cursor%20Setup%200.44.11%20-%20Build%20250103fqxdt5u9z-x64.exe)
+> - Mac: [Apple Silicon](https://dl.todesktop.com/230313mzl4w4u92/versions/0.44.11/mac/zip/arm64)
+
+### 🔒 Disable Auto-Update Feature
+> To prevent Cursor from automatically updating to unsupported new versions, you can block the update server.
+
+1. Open Hosts file:
+```bash
+sudo vim /etc/hosts
+```
+
+2. Add the following lines to the file and save:
+```
+# block cursor autoupdate
+127.0.0.1 download.todesktop.com
+```
+
+> ⚠️ **Note:** After disabling the autoupdates, you can execute the script to reset the device ID.
 
 ## Overview
 
